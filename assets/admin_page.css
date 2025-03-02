@@ -1,0 +1,66 @@
+.st-key-admin-menu input[type="radio"] + div {
+    width: 100%;
+    color: #DBC9EC;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+}
+.st-key-admin-menu div[role="radiogroup"] label{
+    width: 100%;
+    margin-bottom: 12px;
+}
+           
+.st-key-admin-menu input[type="radio"][tabindex="0"] + div {
+    background: #473971 !important;
+    color: #C5B3E6 !important;
+}
+.st-key-admin-menu input[type="radio"][tabindex="0"] + div p {
+    color: #C5B3E6 !important;
+}
+.st-key-admin-menu div[role="radiogroup"] label > div:first-child {
+    display: none !important;
+}
+
+/* faculty operation list  */
+
+.st-key-faculty-operation-list input[type="radio"] + div {
+    width: 100%;
+    color: #DBC9EC;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+}
+.st-key-faculty-operation-list div[role="radiogroup"] label{
+    width: 100%;
+    margin-bottom: 12px;
+}
+           
+.st-key-faculty-operation-list input[type="radio"][tabindex="0"] + div {
+    background: #473971 !important;
+    color: #C5B3E6 !important;
+}
+.st-key-faculty-operation-list input[type="radio"][tabindex="0"] + div p {
+    color: #FDE79D !important;
+}
+.st-key-faculty-operation-list div[role="radiogroup"] label > div:first-child {
+    display: none !important;
+}
+.st-key-add-student button{width: 200px;}
+.st-key-add-faculty button{width: 200px;}
+
+.st-key-update-faculty button{
+    width: 100px;
+    background-color: rgb(42, 95, 201);
+    color: white;
+}
+.st-key-update-faculty button:hover{
+    color: white;
+    background-color: rgb(65, 128, 255);
+}
+.st-key-delete-faculty button{
+    width: 100px;
+    background-color: darkred;
+    color: white;
+}
+.st-key-delete-faculty button:hover {
+    color: white;
+    background-color: red;
+}

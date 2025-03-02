@@ -1,0 +1,58 @@
+.st-key-side-button input[type="radio"] + div {
+    width: 100%;
+    color: #DBC9EC;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+}
+
+.st-key-side-button div[role="radiogroup"] label{
+    width: 100% !important;
+    margin-bottom: 12px !important;
+}
+           
+.st-key-side-button input[type="radio"][tabindex="0"] + div {
+    background: #E6FF4D !important;
+    color: #17455C !important;
+}
+.st-key-side-button input[type="radio"][tabindex="0"] + div p {
+    color: #17455C !important;
+}
+.st-key-side-button div[role="radiogroup"] label > div:first-child {
+    display: none !important;
+}
+[data-testid=stSidebar]{
+    background-color: #1E0059;
+}
+[data-testid=stSidebar] div{
+    color: #DBC9EC;
+}
+
+div[data-testid="InputInstructions"] > span:nth-child(1) {
+    visibility: hidden !important;
+}
+#MainMenu{
+    visibility: collapse !important;
+}
+.stAppDeployButton {display:none !important;}
+#stDecoration {display:none !important;}
+.stAppHeader{
+    display: none !important;
+}
+
+
+.st-cc{
+    border-bottom-color: transparent !important;
+}
+.st-cb{
+    border-top-color: transparent !important;
+}
+.st-ca{
+    border-right-color: transparent !important;
+}
+.st-c9{
+    border-left-color: transparent !important;
+}
+.st-emotion-cache-ocsh0s:focus:not(:active) {
+    border-color: transparent !important;
+    color: white !important;
+}

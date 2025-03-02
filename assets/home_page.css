@@ -1,0 +1,48 @@
+.stMainBlockContainer{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+.stMain {
+    padding: 0px;
+    margin: 0px;
+}
+.st-key-main-img-container img{
+    width: 81% !important;
+}
+
+.st-key-login-container{
+    padding-right: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    margin-top: 100px !important;
+    width: 80% !important;
+}
+.st-key-login-container > div{
+    display: flex !important;
+    justify-content: start !important;
+}
+/* .st-key-login-container .stHorizontalBlock{visibility: collapse;} */
+
+
+.stElementToolbar{visibility: collapse !important;}
+
+.st-key-btn-login{
+    margin-top: 40px !important;
+}
+.st-key-btn-login div{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    
+}
+.st-key-btn-login button{
+    width: 150px !important;
+    background-color: #F2C547 !important;
+    color: #785800 !important;
+}
+.st-key-btn-login button:hover{
+    color: white !important;
+    background-color: #FFBB00 !important;
+    border: none !important;
+}

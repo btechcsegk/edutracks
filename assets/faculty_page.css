@@ -1,0 +1,131 @@
+
+.st-key-faculty-operation-list input[type="radio"] + div {
+    width: 100%;
+    color: #DBC9EC;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+}
+.st-key-faculty-operation-list div[role="radiogroup"] label{
+    width: 100%;
+    margin-bottom: 12px;
+}
+           
+.st-key-faculty-operation-list input[type="radio"][tabindex="0"] + div {
+    background: #473971 !important;
+    color: #C5B3E6 !important;
+}
+.st-key-faculty-operation-list input[type="radio"][tabindex="0"] + div p {
+    color: #FDE79D !important;
+}
+.st-key-faculty-operation-list div[role="radiogroup"] label > div:first-child {
+    display: none !important;
+}
+
+
+.st-key-stu-perf-1{
+    background-color: #DBC9EC;
+    border-radius: 12px;
+    align-items: center;
+    padding-top: 10px;
+    line-height: 2px;
+    padding-bottom: 20px;
+}
+
+.st-key-stu-perf-1 div{
+    width: 140px;
+}
+.st-key-stu-perf-2{
+    background-color: #DBC9EC;
+    border-radius: 12px;
+    align-items: center;
+    padding-top: 10px;
+    line-height: 2px;
+    padding-bottom: 20px;
+}
+
+.st-key-stu-perf-2 div{
+    width: 140px;
+}
+.st-key-stu-att-1{
+    background-color: #DBC9EC;
+    border-radius: 12px;
+    align-items: center;
+    padding-top: 10px;
+    line-height: 2px;
+    padding-bottom: 20px;
+}
+
+.st-key-stu-att-1 div{
+    width: 140px;
+}
+.st-key-stu-att-2{
+    background-color: #DBC9EC;
+    border-radius: 12px;
+    align-items: center;
+    padding-top: 10px;
+    line-height: 2px;
+    padding-bottom: 20px;
+}
+
+.st-key-stu-att-2 div{
+    width: 140px;
+}
+
+.st-key-stu-con {
+    display: flex;
+    flex-direction: row;
+    background-color: #DBC9EC;
+    width: 296px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    line-height: 2px;
+    padding-left: 20px;
+}
+.st-key-stu-con div:first-child{
+    width: 100px;
+}
+.st-key-stu-con div{
+    width: 140px;
+}
+
+.st-key-btn-upd-tot button{
+    margin-top: 12px;
+    background-color: darkblue;
+    width: 100px;
+    color: white;
+}
+.st-key-btn-upd-tot{
+    padding-top: 15px;
+}
+.st-key-btn-upd-tot button:hover{
+    background-color: rgb(54, 54, 209);
+    color: white;
+}
+.st-key-an-box{
+    background-color: beige;
+    padding-bottom: 30px;
+    border-radius: 8px;
+}
+.st-key-an-box div:first-child{
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.st-key-btn-save-mark button{
+    background-color: darkblue;
+    width: 200px;
+    color: white;
+}
+.st-key-btn-save-mark button:hover{
+    background-color: rgb(54, 54, 209);
+    color: white;
+}
+
+.st-key-dec button{
+    border: none;
+    color: blue;
+}
+.st-key-inc button{
+    border: none;
+    color: blue;
+}

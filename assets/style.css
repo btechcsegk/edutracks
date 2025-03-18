@@ -56,30 +56,5 @@ div[data-testid="InputInstructions"] > span:nth-child(1) {
     border-color: transparent !important;
     color: white !important;
 }
-.st-key-stu-con {
-    display: flex;
-    flex-direction: row;
-    background-color: #DBC9EC;
-    width: 240px;justify-content: center;
-    border-radius: 12px;
-}
-.st-key-stu-con div:first-child{
-    width: 100px;
-}
-.st-key-stu-con div{
-    width: 100px;
-}
 
-.st-key-stu-att {
-    display: flex;
-    flex-direction: row;
-    background-color: #DBC9EC;
-    justify-content: center;
-    border-radius: 12px;
-}
-.st-key-stu-att div:first-child{
-    width: 100px;
-}
-.st-key-stu-att div{
-    width: 100px;
-}
+

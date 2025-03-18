@@ -1,0 +1,89 @@
+.stAppViewContainer{
+    min-height: 100vh;
+    background-color: #E6ECFF;
+}
+.stMainBlockContainer{
+    background-color: #E6ECFF;
+}
+
+.st-key-m-sub{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgba(143, 143, 143, 0.471);
+    border-radius: 8px;
+    padding: 10px;
+}
+.st-key-name-con{
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+.st-key-name-con div{
+    font-size: 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+.st-key-m-sub div{
+    width: 100px;
+}
+.st-key-m-sub .stMarkdown div {
+    width: 200px;
+}
+
+.st-key-m-att{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgba(143, 143, 143, 0.471);
+    border-radius: 8px;
+    padding: 10px;
+}
+.st-key-m-att div{
+    width: 100px;
+}
+.st-key-m-att .stMarkdown div {
+    width: 200px;
+}
+
+.st-key-m-sem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgba(143, 143, 143, 0.471);
+    border-radius: 8px;
+    padding: 10px;
+}
+.st-key-m-sem div{
+    width: 100px;
+}
+.st-key-m-sem .stMarkdown div {
+    width: 300px;
+}
+
+.st-key-att-con{
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px 5px 0 rgba(143, 143, 143, 0.471);
+}
+
+.st-key-res-con{
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 5px 0 rgba(143, 143, 143, 0.471);
+}
+.st-key-res-con div:first-child{
+    padding-right: 10px;
+}
+progress::-webkit-progress-bar {
+        background-color: #E6ECFF;
+    }
+progress::-webkit-progress-value {
+    background-color: blue;
+}

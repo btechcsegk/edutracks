@@ -46,20 +46,6 @@
 .st-key-add-student button{width: 200px;}
 .st-key-add-faculty button{width: 200px;}
 
-.st-key-update-faculty button{
-    width: 100px;
-    background-color: rgb(42, 95, 201);
-    color: white;
-}
-.st-key-update-faculty button:hover{
-    color: white;
-    background-color: rgb(65, 128, 255);
-}
-.st-key-delete-faculty button{
-    width: 100px;
-    background-color: darkred;
-    color: white;
-}
 .st-key-delete-faculty button:hover {
     color: white;
     background-color: red;

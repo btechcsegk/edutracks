@@ -8,6 +8,4 @@ class User(BaseModel):
     password: str = ""
     name: str = ""
     role: str = ""
-    DOB: datetime = datetime.today()
-    phone: int = 1111111111
     

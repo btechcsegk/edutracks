@@ -23,10 +23,9 @@ def HomePage():
         def HandleLogin():
             res = remoteDataSource.loginByRole(username,password)
             if res != "False":
-                st.session_state.page = "Admin"
+                st.session_state.page = res['role']
                 st.session_state.uid = res['username']
                 st.session_state.name = res['name']
-                st.session_state.role = res['role']
             else:
                 con.error("Userid or password is inavlid!")
                 

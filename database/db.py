@@ -94,7 +94,7 @@ def get_exams_data():
     return cur.fetchall()
 
 def get_att_by_s_id_and_sem(s_id):
-    cur.execute(f"Select subject.name,attendance.obt,sub_attendance.tot from sub_attendance INNER JOIN attendance ON sub_attendance.sub_id=attendance.sub_id INNER JOIN subject ON attendance.sub_id=subject.sub_id INNER JOIN enrollment ON subject.sem=subject.sem where enrollment.s_id={s_id}")
+    cur.execute(f"Select subject.name,attendance.obt,sub_attendance.tot from sub_attendance INNER JOIN attendance ON sub_attendance.sub_id=attendance.sub_id INNER JOIN subject ON attendance.sub_id=subject.sub_id INNER JOIN enrollment ON subject.sem=subject.sem where enrollment.s_id={s_id}  AND attendance.s_id={s_id}")
     return cur.fetchall()
 
 def get_marks_subject_wise(uid):

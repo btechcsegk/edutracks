@@ -14,7 +14,7 @@ def getFetchOne(val):
 
 def StudentPage():
     
-    sub_count = getFetchOne(db.get_subject_count(2204921540059))
+    sub_count = getFetchOne(db.get_subject_count(st.session_state.uid))
     att = db.get_average_attendance_by_id(st.session_state.uid)
     sem = getFetchOne(db.get_semester_by_id(st.session_state.uid))
     
@@ -61,6 +61,9 @@ def StudentPage():
             plt.xticks(rotation=20)
             with res_con.columns([1,6,1])[1]:
                 st.pyplot(fig.figure)
+            with res_con.columns([10,1])[0]:
+                st.write("## Exams Detail")
+                st.table(df)
         else:
             st.write("No Results Found")
         
@@ -85,53 +88,70 @@ def StudentPage():
         
         
         
-        
-    # Function to generate the PDF report
-    def generate_pdf(student_name, student_data, fig, fig2, fig3):
-        buffer = BytesIO()
-        c = canvas.Canvas(buffer, pagesize=letter)
-        
-        # Title
-        c.setFont("Helvetica", 16)
-        c.drawString(100, 750, f"Student Report: {student_name}")
-        
-        # Basic Info
-        c.setFont("Helvetica", 12)
-        c.drawString(100, 720, f"Student ID: {student_data['Student ID']}")
-        c.drawString(100, 700, f"Age: {student_data['Age']}")
-        c.drawString(100, 680, f"Grade: {student_data['Grade']}")
-        
-        # Academic Performance
-        c.drawString(100, 650, "Academic Performance:")
-        c.drawString(100, 630, f"Math: {student_data['Math']}")
-        c.drawString(100, 610, f"English: {student_data['English']}")
-        c.drawString(100, 590, f"Science: {student_data['Science']}")
-        c.drawString(100, 570, f"History: {student_data['History']}")
-        
-        # Save the PDF
-        c.showPage()
-        
-        # Save plots to buffer (PNG images)
-        fig.savefig("temp_chart.png")
-        fig2.savefig("temp_pie.png")
-        fig3.savefig("temp_histogram.png")
-        
-        # Attach images to PDF
-        c.drawImage("temp_chart.png", 100, 400, width=400, height=250)
-        c.drawImage("temp_pie.png", 100, 150, width=400, height=250)
-        c.drawImage("temp_histogram.png", 100, -100, width=400, height=250)
-        
-        c.save()
-        
-        buffer.seek(0)
-        return buffer
+        def generate_pdf(student_name, student_roll_no, exam_data):
+            buffer = BytesIO()
+            c = canvas.Canvas(buffer, pagesize=letter)
+            
+            # Title
+            c.setFont("Helvetica", 16)
+            c.drawString(100, 750, f"Student Report: {student_name}") 
+            
+            # Student Info (Name and Roll No)
+            c.setFont("Helvetica", 12)
+            c.drawString(100, 720, f"Student Name: {student_name}")
+            c.drawString(100, 700, f"Roll No: {student_roll_no}")
+            
+            
+            # Column headers
+            c.drawString(100, 630, "Exam Name")
+            c.drawString(310, 630, "Total Marks")
+            c.drawString(450, 630, "Obtained Marks")
+            
+            # Function to handle long exam names (wrapping)
+            def draw_wrapped_text(x, y, text, max_width):
+                """Wrap text if it's too wide for the given max width."""
+                lines = []
+                current_line = ""
+                
+                for word in text.split():
+                    test_line = f"{current_line} {word}".strip()
+                    if c.stringWidth(test_line, "Helvetica", 10) < max_width:
+                        current_line = test_line
+                    else:
+                        lines.append(current_line)
+                        current_line = word
+                
+                lines.append(current_line)
+                
+                # Draw each line
+                for line in lines:
+                    c.drawString(x, y, line)
+                    y -= 12  # Move down for the next line
+            
+                return y  # Return the updated y position
+            
+            # Populate exam results
+            y_position = 610
+            for i, row in exam_data.iterrows():
+                y_position = draw_wrapped_text(100, y_position, row['Exams'], 180)  # Wrap exam name text to fit 180 width
+                c.drawString(310, y_position, str(row['Total Marks']))
+                c.drawString(450, y_position, str(row['Obtained Marks']))
+                y_position -= 20  # Move to the next line
+            
+            c.showPage()  # New page (if needed)
+            c.save()
 
-    # Allow user to download the report
-    # if st.button("Download Report"):
-    #     pdf_buffer = generate_pdf(student_name, student_data, fig, fig2, fig3)
-    #     st.download_button(
-    #         label="Download PDF Report",
-    #         data=pdf_buffer,
-    #         file_name=f"{student_name}_report.pdf",
-    #         mime="application/pdf"
-    #     )
+            buffer.seek(0)
+            return buffer
+
+        # Streamlit code for downloading the PDF report
+        st.title('Student Report Generator')
+        
+        rep_con = st.container(key="rep-con")
+        rep_con.download_button(
+            label="Download PDF Report",
+            data=generate_pdf(st.session_state.name,st.session_state.uid,df),
+            file_name=f"{st.session_state.uid}_report.pdf",
+            mime="application/pdf"
+        )
+   

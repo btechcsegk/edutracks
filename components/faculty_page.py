@@ -42,7 +42,7 @@ def viewAnalytics():
         
         an_box = st.container(key="an-box")
         # Title
-        an_box.header("Number of Students in Each Subject")
+        an_box.header("Number of Students in each exam")
         
         if db.get_exams_data() is not None:
             exam_data = db.get_exams_data()
@@ -360,6 +360,6 @@ def FacultyPage():
                 server.login(SENDER_EMAIL, SENDER_PASSWORD)
                 server.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, msg.as_string())
                 server.quit()
-                print("Email sent successfully!")
+                st.success("Email sent successfully!")
             except Exception as e:
                 st.write(f"Error sending email: {e}")
